@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <Container>
       <div>
-      <h1 className={styles.title}>
+        <h1 className={styles.title}>
           “Regression testing. What is it? If the system compiles, that's good,
           if it boots, that's great!”
         </h1>
