@@ -6,7 +6,9 @@ export default function MaterialsPage() {
   return (
     <>
       <Container>
-        <div></div>
+        <div>
+          <h1>Mat Page</h1>
+        </div>
       </Container>
     </>
   );

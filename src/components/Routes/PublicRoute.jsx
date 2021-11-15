@@ -2,15 +2,15 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect, Route } from 'react-router';
 
-// import {  } from '../../redux/auth/auth-selectors';
+import { getToken } from '../../redux/auth/auth-selectors';
 
 export default function PublicRoute({
   children,
-  redirectedTo = 'smth',
+  redirectedTo = '/',
   restricted = false,
   ...props
 }) {
-  const isLoggedIn = useSelector();
+  const isLoggedIn = useSelector(getToken);
   const shouldRedirect = isLoggedIn && restricted;
 
   return (
