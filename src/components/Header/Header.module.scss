@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.header {
+  border-bottom: 1px solid #e2e3e5;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+}
+
+.userNameIcon {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px;
+  background-color: var(--color-second-background);
+  border-radius: 50px;
+  box-shadow: 0px 1px 1px rgba(18, 29, 46, 0.1);
+}
