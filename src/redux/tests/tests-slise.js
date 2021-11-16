@@ -15,7 +15,7 @@ const testSlice = createSlice({
       state.isLoading = true;
     },
     [testOperations.getTests.fulfilled](state, { payload }) {
-      state.items = payload.sprints;
+      state.items = payload.tests;
 
       state.isLoading = false;
       state.isLogIn = true;

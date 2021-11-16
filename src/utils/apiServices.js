@@ -50,9 +50,9 @@ export async function apiAddTest(projectData) {
   }
 }
 
-export async function apiGetTest() {
+export async function apiGetTest(name) {
   try {
-    const { data } = await axios.get('/tests');
+    const { data } = await axios.get(`/tests/${name}`);
     return data;
   } catch (error) {
     throw new Error(error);
