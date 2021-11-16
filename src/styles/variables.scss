@@ -8,6 +8,7 @@ $shadow-card: 0px 1px 3px rgba(0, 0, 0, 0.05);
 $shadow-test: 0px 4px 15px rgba(2, 23, 42, 0.1);
 $shadow-auth: 0px 4px 15px rgba(2, 23, 42, 0.1);
 $shadow-project-hover: 0px 4px 4px;
+$shadow-icon: 0px 1px 1px rgba(18, 29, 46, 0.1);
 //$shadow-project-hover: 0px 4px 4px rgba(0, 0, 0, 0.25);
 $shadow-modal: 0px 6px 26px rgba(0, 5, 97, 0.1);
 //colors
@@ -15,21 +16,23 @@ $shadow-modal: 0px 6px 26px rgba(0, 5, 97, 0.1);
   --color-main-text: #000000;
   --color-second-text: #555555;
   --color-footer-text: rgba(255, 255, 255, 0.4);
-  --color-main-background: #F5F6FB;
+  --color-main-background: #f5f6fb;
   --color-second-background: #ffffff;
 
   --color-card-background: #ffffff;
   --color-card-text: #ffffff;
 
+  --color-border: #e2e3e5;
+
   --color-input-text: #181c27;
-  --color-label-placeholder: #BBBBBB;
-  --color-input-border: #CED2D1;
+  --color-label-placeholder: #bbbbbb;
+  --color-input-border: #ced2d1;
   --color-input-background: #ffffff;
   --color-input-error: #ff0000;
 
   --color-btn-main-text: #ffffff;
   --color-btn-second-text: #000000;
-  --color-btn-background: #FF6B09;
+  --color-btn-background: #ff6b09;
   --color-btn-background-hover: #ee5f00;
 }
 

@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { getToken, getUserName } from '../../redux/auth/auth-selectors';
 import Container from '../_shared/Container/Container';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 
@@ -11,22 +13,22 @@ const Header = () => {
     width: window.innerWidth,
     breakPoint: 767,
   });
+  const userName = useSelector(getUserName);
 
-  const isLoggedIn = true;
+  const isLoggedIn = useSelector(getToken);
+
+  const handleResizeWindow = useCallback(() => {
+    setWindowWidth({ ...windowWidth, width: window.innerWidth });
+  }, [windowWidth]);
 
   useEffect(() => {
     window.addEventListener('resize', handleResizeWindow);
     return () => {
       window.removeEventListener('resize', handleResizeWindow);
     };
-  }, []);
-
-  function handleResizeWindow() {
-    setWindowWidth({ ...windowWidth, width: window.innerWidth });
-  }
+  }, [handleResizeWindow]);
 
   const { width, breakPoint } = windowWidth;
-  console.log(`windowWidth`, windowWidth);
 
   return (
     <header className={styles.header}>
@@ -37,7 +39,7 @@ const Header = () => {
         )}
         {isLoggedIn && width < breakPoint && (
           <div>
-            <span className={styles.userNameIcon}>D</span>
+            <span className={styles.userNameIcon}>{userName[0]}</span>
           </div>
         )}
 
