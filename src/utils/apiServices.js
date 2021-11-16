@@ -40,3 +40,21 @@ export async function apiLogoutUser() {
     throw new Error(error);
   }
 }
+
+export async function apiAddTest(projectData) {
+  try {
+    const { data } = await axios.post('/test', projectData);
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+export async function apiGetTest() {
+  try {
+    const { data } = await axios.get('/tests');
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+}

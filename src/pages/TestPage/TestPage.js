@@ -7,7 +7,7 @@ export default function TestPage() {
     <>
       <Container>
         <div>
-          <h1>Test Page</h1>
+          <h1>Tests Page</h1>
         </div>
       </Container>
     </>
