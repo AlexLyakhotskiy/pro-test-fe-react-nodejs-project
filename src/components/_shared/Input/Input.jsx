@@ -9,6 +9,7 @@ export default function Input({
   label,
   className = '',
   type = 'text',
+  children,
   ...rest
 }) {
   const inputId = shortid.generate();
@@ -26,9 +27,7 @@ export default function Input({
         value={formik.values[name]}
         {...rest}
       />
-      <div
-        className={`${styles.bottomLine} ${isError && styles.bottomLineError}`}
-      ></div>
+      {children}
       {isError && <span className={styles.error}>{formik.errors[name]}</span>}
       <label
         htmlFor={inputId}
@@ -39,5 +38,3 @@ export default function Input({
     </div>
   );
 }
-
-
