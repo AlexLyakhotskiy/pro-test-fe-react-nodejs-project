@@ -7,19 +7,27 @@ import { signUp, signIn } from '../../redux/auth/auth-operations';
 
 import Container from '../_shared/Container/Container';
 import Input from '../_shared/Input/Input';
+import MainButton from '../_shared/MainButton/MainButton';
 
 import styles from './AuthForm.module.scss';
 
+const initialValues = {
+  email: '',
+  name: '',
+  password: '',
+  confirmPassword: '',
+};
+
 export default function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false);
+  const [isVisibleField, setIsVisibleField] = useState({
+    password: false,
+    confirmPassword: false,
+  });
   const dispatch = useDispatch();
+
   const formik = useFormik({
-    initialValues: {
-      email: '',
-      name: '',
-      password: '',
-      confirmPassword: '',
-    },
+    initialValues,
     validationSchema: isSignUp ? validationSchemaReg : validationSchemaLog,
     onSubmit: ({ email, name, password }) => {
       const data = { email, password };
@@ -28,21 +36,35 @@ export default function AuthForm() {
     },
   });
 
-  const handleChangeTypeForm = () => setIsSignUp(p => !p);
+  const handleChangeTypeForm = () => {
+    setIsSignUp(p => !p);
+    formik.setErrors({});
+    formik.setTouched({});
+    formik.setValues(initialValues);
+  };
+
+  const handleToggleVisibilityInput = field => {
+    setIsVisibleField(p => ({ ...p, [field]: !p[field] }));
+  };
 
   return (
     <Container className={styles.container}>
       <div className={styles.leftSide}>
         <h1 className={styles.title}>Pro Test</h1>
         <p className={styles.description}>
-          [ We will help you find weak points in knowledge so that you can
-          strengthen it. We will show you what is relevant to know for a QA
-          Engineer and will try to make the learning process more diverse_ ]
+          <span className={styles.boldText}>[ </span>
+          We will help you find weak points in knowledge so that you can
+          strengthen it. We will show you what is relevant to know for a
+          <span className={styles.boldText}> QA Engineer</span> and will try to
+          make the learning process more diverse_
+          <span className={styles.boldText}> ]</span>
         </p>
       </div>
       <div className={styles.rightSide}>
-        <form onSubmit={formik.handleSubmit}>
-          <h2>Registration Authentication</h2>
+        <form onSubmit={formik.handleSubmit} className={styles.form}>
+          <h2 className={styles.formTitle}>
+            {isSignUp ? 'Registration' : 'Authentication'}
+          </h2>
           <Input
             formik={formik}
             name="email"
@@ -73,10 +95,19 @@ export default function AuthForm() {
               className={styles.input}
             />
           )}
-          <button type="submit">{isSignUp ? 'sign up' : 'Sign in'}</button>
-          <button type="button" onClick={handleChangeTypeForm}>
-            {isSignUp ? 'sign in' : 'sign up'}
-          </button>
+          <div className={styles.btnWrapper}>
+            <MainButton
+              className={styles.btn}
+              type="submit"
+              label={isSignUp ? 'sign up' : 'sign in'}
+            />
+            <MainButton
+              className={styles.btn}
+              isMainButton={false}
+              onClick={handleChangeTypeForm}
+              label={isSignUp ? 'sign in' : 'sign up'}
+            />
+          </div>
         </form>
       </div>
     </Container>

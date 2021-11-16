@@ -1,0 +1,41 @@
+@import '../../../styles/variables.scss';
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  font-weight: bold;
+  font-size: 10px;
+  text-transform: capitalize;
+
+  transition: all $trans-func $trans-dur;
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.mainBtn {
+  @extend .btn;
+  border: none;
+  color: var(--color-btn-main-text);
+  background-color: var(--color-btn-background);
+  &:hover {
+    box-shadow: $shadow-hover var(--color-btn-background-hover);
+    border: 1px solid var(--color-btn-border);
+    background-color: var(--color-btn-background-hover);
+  }
+}
+
+.secondBtn {
+  @extend .btn;
+  border: 1px solid var(--color-btn-border);
+  color: var(--color-btn-second-text);
+  background-color: var(--color-btn-second-background);
+  &:hover {
+    box-shadow: $shadow-hover var(--color-btn-second-background-hover);
+    border-color: var(--color-btn-border-hover);
+    background-color: var(--color-btn-second-background-hover);
+  }
+}

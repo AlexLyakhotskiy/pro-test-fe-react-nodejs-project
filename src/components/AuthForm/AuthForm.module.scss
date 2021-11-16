@@ -1,6 +1,18 @@
+@import '../../styles/variables.scss';
+
 .container {
-  @media screen and (min-width: 1280px) {
+  padding-top: 39px;
+  padding-bottom: 50px;
+  @media screen and (min-width: 768px) {
     display: flex;
+    padding-top: 80px;
+    padding-bottom: 70px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    align-items: center;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 1280px) {
     justify-content: space-around;
     padding-top: 99px;
     padding-bottom: 99px;
@@ -9,5 +21,107 @@
 
 .leftSide,
 .rightSide {
-  width: calc((100% - 315px) / 2);
+  @media screen and (min-width: 768px) {
+    width: 540px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: calc((100% - 315px) / 2);
+  }
+}
+
+.leftSide {
+  @media screen and (min-width: 1280px) {
+    margin-top: 71px;
+  }
+}
+
+.rightSide {
+  @media screen and (min-width: 768px) {
+    width: 540px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 505px;
+  }
+}
+
+.leftSide {
+  @media screen and (max-width: 1279px) {
+    margin-bottom: 30px;
+  }
+}
+
+.title {
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 34px;
+  }
+}
+
+.description {
+  line-height: 1.66;
+  @media screen and (min-width: 768px) {
+    line-height: 2.25;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 420px;
+  }
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.form {
+  background-color: var(--color-second-background);
+  box-shadow: $shadow-auth;
+  padding: 30px 20px;
+  @media screen and (min-width: 768px) {
+    padding-top: 62px;
+    padding-right: 57px;
+    padding-left: 57px;
+    padding-bottom: 42px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.formTitle {
+  margin-bottom: 20px;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+}
+
+.input {
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 24px;
+  }
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
+}
+
+.btn {
+  width: 110px;
+  min-height: 60px;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    width: 200px;
+  }
 }
