@@ -27,6 +27,7 @@ export default function Input({
         value={formik.values[name]}
         {...rest}
       />
+      {children}
       {isError && <span className={styles.error}>{formik.errors[name]}</span>}
       <label
         htmlFor={inputId}
@@ -34,7 +35,6 @@ export default function Input({
       >
         {label}
       </label>
-      {children}
     </div>
   );
 }

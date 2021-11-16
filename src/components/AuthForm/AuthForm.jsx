@@ -8,6 +8,7 @@ import { signUp, signIn } from '../../redux/auth/auth-operations';
 import Container from '../_shared/Container/Container';
 import Input from '../_shared/Input/Input';
 import MainButton from '../_shared/MainButton/MainButton';
+import VisibleInputText from '../_shared/Input/VisibleInputText/VisibleInputText';
 
 import styles from './AuthForm.module.scss';
 
@@ -18,12 +19,14 @@ const initialValues = {
   confirmPassword: '',
 };
 
+const initVisibleField = {
+  password: false,
+  confirmPassword: false,
+};
+
 export default function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false);
-  const [isVisibleField, setIsVisibleField] = useState({
-    password: false,
-    confirmPassword: false,
-  });
+  const [isVisibleField, setIsVisibleField] = useState(initVisibleField);
   const dispatch = useDispatch();
 
   const formik = useFormik({
@@ -41,6 +44,7 @@ export default function AuthForm() {
     formik.setErrors({});
     formik.setTouched({});
     formik.setValues(initialValues);
+    setIsVisibleField(initVisibleField);
   };
 
   const handleToggleVisibilityInput = field => {
@@ -83,17 +87,31 @@ export default function AuthForm() {
             formik={formik}
             name="password"
             label="Password"
-            type="password"
+            type={isVisibleField.password ? 'text' : 'password'}
             className={styles.input}
-          />
+          >
+            <VisibleInputText
+              className={styles.toggleVisibleBtn}
+              isVisibleText={isVisibleField.password}
+              toggleVisible={() => handleToggleVisibilityInput('password')}
+            />
+          </Input>
           {isSignUp && (
             <Input
               formik={formik}
               name="confirmPassword"
               label="Confirm password"
-              type="password"
+              type={isVisibleField.confirmPassword ? 'text' : 'password'}
               className={styles.input}
-            />
+            >
+              <VisibleInputText
+                className={styles.toggleVisibleBtn}
+                isVisibleText={isVisibleField.confirmPassword}
+                toggleVisible={() =>
+                  handleToggleVisibilityInput('confirmPassword')
+                }
+              />
+            </Input>
           )}
           <div className={styles.btnWrapper}>
             <MainButton
