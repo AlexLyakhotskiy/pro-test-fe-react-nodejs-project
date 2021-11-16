@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+
 import Container from '../../_shared/Container/Container';
 import Svg from '../../_shared/Svg/Svg';
 import NavMenu from '../NavMenu/NavMenu';
+
 import styles from './BurgerMenu.module.scss';
 
 const BurgerMenu = () => {

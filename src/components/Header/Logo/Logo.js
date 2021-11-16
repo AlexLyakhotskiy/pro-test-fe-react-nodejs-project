@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
+
 import { routes } from '../../../routes/routes';
 
-import styles from './Logo.module.scss';
 import Svg from '../../_shared/Svg/Svg';
+
+import styles from './Logo.module.scss';
 
 const Logo = () => {
   return (
