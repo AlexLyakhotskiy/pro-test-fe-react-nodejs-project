@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import sprite from '../sprite.svg';
 import { routes } from '../../../routes/routes';
 
 import styles from './Logo.module.scss';
