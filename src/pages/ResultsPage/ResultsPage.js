@@ -6,7 +6,9 @@ export default function ResultsPage() {
   return (
     <>
       <Container>
-        <div></div>
+        <div>
+          <h1>Res Page</h1>
+        </div>
       </Container>
     </>
   );
