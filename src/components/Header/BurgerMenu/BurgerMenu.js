@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Container from '../../_shared/Container/Container';
+import Svg from '../../_shared/Svg/Svg';
 import NavMenu from '../NavMenu/NavMenu';
-import sprite from '../sprite.svg';
 import styles from './BurgerMenu.module.scss';
 
 const BurgerMenu = () => {
@@ -21,18 +21,18 @@ const BurgerMenu = () => {
   return (
     <>
       <button type="button" onClick={toggleModal} className={styles.burgerBtn}>
-        <svg className={styles.burgerIcon}>
-          <use
-            href={`${sprite}${
-              isBurgerMenuOpen ? '#icon-close' : '#icon-burger-menu'
-            }`}
-          />
-        </svg>
+        <Svg
+          icon={isBurgerMenuOpen ? 'close' : 'burger-menu'}
+          className={styles.burgerIcon}
+        />
       </button>
       {isBurgerMenuOpen && (
         <div className={styles.menu}>
           <Container className={styles.container}>
-            <NavMenu />
+            <NavMenu
+              toggleModal={toggleModal}
+              isBurgerMenuOpen={isBurgerMenuOpen}
+            />
           </Container>
         </div>
       )}
