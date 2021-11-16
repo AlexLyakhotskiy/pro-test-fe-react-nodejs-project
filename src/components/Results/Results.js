@@ -1,4 +1,5 @@
 import imgCat from '../../icons/cat.png';
+import MainButton from '../_shared/MainButton/MainButton';
 import ChartPie from './Chart/ChartPie';
 import Chart from './Chart/ChartPie';
 
@@ -24,7 +25,11 @@ const Results = () => {
       <p className={styles.resText}>
         But you still need to learn some materials.
       </p>
-      <button className={styles.btn}>Try again</button>
+      <MainButton
+        className={styles.btn}
+        isMainButton={true}
+        label={'Try again'}
+      />
     </div>
   );
 };
