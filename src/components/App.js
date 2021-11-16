@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { apiToken } from '../utils/apiServices';
 import { getToken } from '../redux/auth/auth-selectors';
 
-// import Header from './Header/Header';
+import Header from './Header/Header';
 import Main from './Main/Main';
 // import Footer from './Footer/Footer';
 
@@ -17,7 +17,7 @@ function App() {
   }, [accessToken]);
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Main />
       {/* <Footer /> */}
     </>

@@ -1,0 +1,87 @@
+@import '../../../styles/variables.scss';
+
+.headerWrapper {
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+.headerNav {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+.headerUserNav {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+.headerNavLink {
+  font-size: 14px;
+  line-height: 1.14;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--color-main-text);
+  padding-top: 26px;
+  padding-bottom: 26px;
+
+  border-bottom: 1px solid #e2e3e5;
+  @media screen and (min-width: 768px) {
+    border-bottom: none;
+    font-size: 12px;
+    line-height: 1.33;
+
+    margin-left: 70px;
+    @media screen and (min-width: 1280px) {
+      margin-left: 80px;
+    }
+  }
+}
+
+.logoutBtn {
+  background-color: inherit;
+  border: none;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  @media screen and (min-width: 768px) {
+    padding-left: 20px;
+    margin-left: 20px;
+    border-left: 1px solid #e2e3e5;
+  }
+}
+
+.logoutIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.userNameBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userNameIcon {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px;
+  background-color: var(--color-second-background);
+  border-radius: 50px;
+  box-shadow: 0px 1px 1px rgba(18, 29, 46, 0.1);
+  margin-left: 68px;
+}
+
+.userName {
+  font-size: 12px;
+  line-height: 1.33;
+  margin-left: 20px;
+}
