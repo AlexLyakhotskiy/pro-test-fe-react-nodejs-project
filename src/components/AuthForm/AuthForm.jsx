@@ -31,7 +31,7 @@ export default function AuthForm() {
   const handleChangeTypeForm = () => setIsSignUp(p => !p);
 
   return (
-    <Container>
+    <Container className={styles.container}>
       <div className={styles.leftSide}>
         <h1 className={styles.title}>Pro Test</h1>
         <p className={styles.description}>

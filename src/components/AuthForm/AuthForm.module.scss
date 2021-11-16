@@ -1,0 +1,13 @@
+.container {
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 99px;
+    padding-bottom: 99px;
+  }
+}
+
+.leftSide,
+.rightSide {
+  width: calc((100% - 315px) / 2);
+}
