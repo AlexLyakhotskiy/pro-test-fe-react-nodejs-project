@@ -40,7 +40,7 @@ body {
   @include light-theme;
   overflow-x: hidden;
   margin: 0;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.22;
   font-family: $mainFont;
   color: var(--color-main-text);
@@ -50,6 +50,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1280px) {
     font-size: 18px;
   }
 }

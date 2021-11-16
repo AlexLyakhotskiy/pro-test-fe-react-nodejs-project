@@ -7,10 +7,8 @@ $trans-dur: 250ms;
 $shadow-card: 0px 1px 3px rgba(0, 0, 0, 0.05);
 $shadow-test: 0px 4px 15px rgba(2, 23, 42, 0.1);
 $shadow-auth: 0px 4px 15px rgba(2, 23, 42, 0.1);
-$shadow-project-hover: 0px 4px 4px;
+$shadow-hover: 0px 4px 4px;
 $shadow-icon: 0px 1px 1px rgba(18, 29, 46, 0.1);
-//$shadow-project-hover: 0px 4px 4px rgba(0, 0, 0, 0.25);
-$shadow-modal: 0px 6px 26px rgba(0, 5, 97, 0.1);
 //colors
 @mixin light-theme {
   --color-main-text: #000000;
@@ -33,7 +31,12 @@ $shadow-modal: 0px 6px 26px rgba(0, 5, 97, 0.1);
   --color-btn-main-text: #ffffff;
   --color-btn-second-text: #000000;
   --color-btn-background: #ff6b09;
+  --color-btn-second-background: #ffffff;
+
   --color-btn-background-hover: #ee5f00;
+  --color-btn-second-background-hover: #cecece;
+  --color-btn-border: #ced2d1;
+  --color-btn-border-hover: #000000;
 }
 
 // @mixin dark-theme {
