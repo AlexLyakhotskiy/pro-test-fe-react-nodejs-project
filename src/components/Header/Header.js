@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+
 import { getToken, getUserName } from '../../redux/auth/auth-selectors';
+
 import Container from '../_shared/Container/Container';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
-
-import styles from './Header.module.scss';
 import Logo from './Logo/Logo';
 import NavMenu from './NavMenu/NavMenu';
+
+import styles from './Header.module.scss';
 
 const Header = () => {
   const [windowWidth, setWindowWidth] = useState({
