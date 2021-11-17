@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import authReducer from './auth/auth-reducer';
+import { testReducer } from './tests/tests-reducer';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -31,7 +32,9 @@ const persistConfigAuth = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfigAuth, authReducer),
+    tests: testReducer,
   },
+
   middleware,
   devTools: process.env.NODE_ENV === 'development',
 });
