@@ -50,7 +50,7 @@ export async function apiAddTest(projectData) {
   }
 }
 
-export async function apiGetTest(name) {
+export async function apiGetTests(name) {
   try {
     const { data } = await axios.get(`/tests/${name}`);
     return data;

@@ -1,7 +1,7 @@
 export const routes = {
   auth: '/auth',
   home: '/',
-  test: '/test/:nameTest',
+  test: '/test',
   results: '/results',
   materials: '/materials',
   ourTeam: '/ourteam',

@@ -1,11 +1,21 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Container from '../../components/_shared/Container/Container';
-import { getTest } from '../../redux/tests/tests-selector';
+import { getTests } from '../../redux/tests/tests-operation';
+import { getTestsSelector } from '../../redux/tests/tests-selector';
 import styles from './TestPage.module.scss';
 
 export default function TestPage() {
+  const dispatch = useDispatch();
+  const nameTets = 'Testing theory';
+
+  useEffect(() => {
+    return dispatch(getTests(nameTets));
+  }, [dispatch, nameTets]);
+
+  const tests = useSelector(getTestsSelector);
+
   return (
     <>
       <Container>
@@ -21,7 +31,7 @@ export default function TestPage() {
                 <h2>What is regression testing?</h2>
                 <ul>
                   <li>
-                    <label>
+                    {/* <label>
                       <input type="radio" checked name="one" /> test1
                     </label>
                     <label>
@@ -35,7 +45,7 @@ export default function TestPage() {
                     </label>
                     <label>
                       <input type="radio" checked name="one" /> test1
-                    </label>
+                    </label> */}
                   </li>
                 </ul>
               </li>
