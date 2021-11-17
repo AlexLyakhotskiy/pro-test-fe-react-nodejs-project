@@ -1,0 +1,113 @@
+@import '../../styles/variables.scss';
+
+.title {
+  margin-top: 40px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.67;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+    line-height: 1.36;
+  }
+}
+
+.borderLine {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 130px;
+  border-bottom: 1px solid var(--color-border);
+  @media screen and (min-width: 768px) {
+    margin-top: 22px;
+    margin-bottom: 39px;
+    width: 322px;
+  }
+}
+
+.teamList {
+  display: flex;
+  flex-wrap: wrap;
+  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.05));
+  @media screen and (min-width: 768px) {
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+}
+
+.teamItem {
+  background: var(--color-second-background);
+  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.05));
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    flex-basis: calc(100% / 2 - 20px);
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    flex-basis: calc(100% / 4 - 20px);
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}
+
+.desc {
+  padding: 20px;
+  text-align: center;
+}
+
+.photo {
+  width: 280px;
+
+  @media screen and (min-width: 768px) {
+    width: 352px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 295px;
+  }
+}
+
+.name {
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.position {
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--color-second-text);
+}
+
+.listLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  fill: var(--color-main-text);
+  width: 17px;
+  height: 17px;
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.itemLink:not(:last-child) {
+  margin-right: 20px;
+}
+
+.icon:hover,
+.icon:focus {
+  fill: var(--color-btn-background);
+}
