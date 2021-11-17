@@ -1,30 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getTests } from './tests-operation';
 
 const initialState = {
-  item: null,
-  error: null,
-  loading: false,
+  result: null,
 };
 
 const testSlice = createSlice({
   name: 'tests',
   initialState,
-  extraReducers: {
-    [getTests.pending](state) {
-      state.loading = true;
-      state.error = null;
-    },
-    [getTests.fulfilled](state, { payload }) {
-      state.item = payload;
-      state.isLoggedIn = true;
-      state.loading = false;
-    },
-    [getTests.rejected](state, { payload }) {
-      state.error = payload;
-      state.loading = false;
+  reducers: {
+    addResult(state, action) {
+      return (state = action.payload);
     },
   },
 });
-
-export default testSlice.reducer;
+export const testAction = testSlice.actions;
+export const testReducer = testSlice.reducer;

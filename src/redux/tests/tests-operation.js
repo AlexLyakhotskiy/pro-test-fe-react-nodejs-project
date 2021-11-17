@@ -6,11 +6,9 @@ export const getTests = createAsyncThunk(
   async (nameTest, { rejectWithValue }) => {
     try {
       const allTests = await apiGetTests(nameTest);
-      return allTests.data.tests;
+      return allTests;
     } catch (error) {
       return rejectWithValue(error.message);
     }
   },
 );
-
-

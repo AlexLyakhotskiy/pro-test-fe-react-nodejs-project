@@ -19,12 +19,21 @@ export default function HomePage() {
         </p>
         <div className={styles.conteinerTest}>
           <div className={styles.blokTema}>
-            <Link to={routes.test} className={styles.link}>
+            <Link
+              to={{ pathname: routes.test, nameTest: 'QA technical training' }}
+              className={styles.link}
+            >
               <p className={styles.text}>QA technical training</p>
             </Link>
           </div>
           <div className={styles.blokTemaTest}>
-            <Link to={routes.test} className={styles.link}>
+            <Link
+              to={{
+                pathname: routes.test,
+                nameTest: 'Testing theory',
+              }}
+              className={styles.link}
+            >
               <p className={styles.text}>Testing theory</p>
             </Link>
           </div>
