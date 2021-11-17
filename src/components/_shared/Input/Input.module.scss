@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 
 .wrapper {
   position: relative;
@@ -10,11 +10,11 @@
   font-family: inherit;
   position: relative;
   width: 100%;
-  border: none;
-  border-bottom: 2px solid var(--color-input-border);
+  font-size: 14px;
+  border: 1px solid var(--color-input-border);
   outline: none;
   color: var(--color-input-text);
-  padding: 7px 0 7px 8px;
+  padding: 20px 25px;
   background: transparent;
   transition: border-color $trans-func $trans-dur;
 
@@ -22,14 +22,22 @@
     color: transparent;
   }
 
-  &:placeholder-shown ~ .label {
-    cursor: text;
-    top: 20px;
+  &:not(:placeholder-shown) ~ .label {
+    top: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: var(--color-input-background);
   }
 
-  &:focus ~ .bottomLine::before {
-    left: 0;
-    width: 100%;
+  &:focus {
+    border-color: var(--color-btn-background-hover);
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px white inset;
   }
 
   -webkit-user-select: text; /* Chrome, Opera, Safari */
@@ -42,30 +50,12 @@
   border-color: var(--color-input-error);
 }
 
-.bottomLine {
-  position: relative;
-  background-color: var(--color-btn-background);
-
-  &::before {
-    content: '';
-    width: 0;
-    height: 2px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: inherit;
-    transition: all $trans-func $trans-dur;
-  }
-}
-
-.bottomLineError {
-  background-color: var(--color-input-error);
-}
-
 .label {
   position: absolute;
-  top: -4px;
+  top: 34px;
+  left: 25px;
   display: block;
+  font-size: 14px;
   transition: all $trans-func $trans-dur;
   color: var(--color-label-input);
 }
@@ -77,10 +67,13 @@
 .input:focus {
   ~ .label {
     position: absolute;
-    top: -4px;
+    top: 6px;
     display: block;
-    transition: all $trans-func $trans-dur;
+    padding-left: 6px;
+    padding-right: 6px;
     color: var(--color-btn-background);
+    background-color: var(--color-input-background);
+    transition: all $trans-func $trans-dur;
   }
   ~ .labelError {
     color: var(--color-input-error);

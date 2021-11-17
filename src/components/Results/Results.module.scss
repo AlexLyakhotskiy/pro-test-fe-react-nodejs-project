@@ -1,0 +1,124 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-main-text);
+}
+
+.title {
+  margin-top: 30px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 2.5;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 41px;
+    font-size: 22px;
+    line-height: 1.36;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 40px;
+  }
+}
+
+.testName {
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.21;
+  }
+}
+
+.borderLine {
+  margin-top: 10px;
+  width: 130px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+  @media screen and (min-width: 768px) {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 322px;
+  }
+}
+
+.answersList {
+  margin-top: 20px;
+  display: flex;
+
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  @media screen and (min-width: 768px) {
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.answersTitle {
+  padding-right: 10px;
+  padding-left: 10px;
+
+  &:not(:last-child) {
+    border-right: 1px solid var(--color-border);
+  }
+  @media screen and (min-width: 768px) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.answersCount {
+  font-weight: 700;
+}
+
+.img {
+  margin-top: 17px;
+  width: 120px;
+  height: 120px;
+  @media screen and (min-width: 768px) {
+    margin-top: 29px;
+  }
+}
+
+.resTitle {
+  margin-top: 21px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+    line-height: 1.36;
+  }
+}
+
+.resText {
+  margin-top: 10px;
+  font-size: 10px;
+  line-height: 1.2;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.btn {
+  margin-top: 22px;
+  margin-bottom: 40px;
+  width: 190px;
+  height: 48px;
+  @media screen and (min-width: 768px) {
+    margin-top: 47px;
+    margin-bottom: 202px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 60px;
+  }
+}

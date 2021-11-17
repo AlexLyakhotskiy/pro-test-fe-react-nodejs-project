@@ -8,7 +8,6 @@ export default function MaterialsPage() {
   return (
     <>
       <Container>
-        
         <div>           
             <h2>Useful literature</h2>
             <div>
@@ -20,7 +19,6 @@ export default function MaterialsPage() {
                 <ResourcesList/>
             </div>
         </div>
-        
       </Container>
     </>
   );
