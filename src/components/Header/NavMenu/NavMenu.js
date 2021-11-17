@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom';
-import styles from './NavMenu.module.scss';
-import { routes } from '../../../routes/routes';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { routes } from '../../../routes/routes';
 import { getToken, getUserName } from '../../../redux/auth/auth-selectors';
 import { logout } from '../../../redux/auth/auth-operations';
+
 import Svg from '../../_shared/Svg/Svg';
+
+import styles from './NavMenu.module.scss';
 
 const NavMenu = props => {
   const isLoggedIn = useSelector(getToken);
