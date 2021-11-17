@@ -4,22 +4,26 @@ import ResourcesList from '../../components/Materials/ResoursesList/ResoursesLis
 
 import Container from '../../components/_shared/Container/Container';
 
+import styles from './MaterialsPage.module.scss';
+
 export default function MaterialsPage() {
   return (
-    <>
-      <Container>
-        <div>           
-            <h2>Useful literature</h2>
-            <div>
-              <LiteratureList/>
+    <div className={styles.aaaa}>
+      <div className={styles.bgImg}>
+        <Container className={styles.container}>
+          <div className={styles.sectionWrapper}>
+            <h2 className={styles.titleLit}>Useful literature</h2>
+            <div className={styles.listBox}>
+              <LiteratureList />
             </div>
 
-            <h2>Useful resources</h2>
-            <div>
-                <ResourcesList/>
+            <h2 className={styles.titleRes}>Useful resources</h2>
+            <div className={styles.listBox}>
+              <ResourcesList />
             </div>
-        </div>
-      </Container>
-    </>
+          </div>
+        </Container>
+      </div>
+    </div>
   );
 }
