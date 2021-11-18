@@ -1,0 +1,57 @@
+@import '../../../styles/variables.scss';
+
+.form {
+  background-color: var(--color-second-background);
+  box-shadow: $shadow-auth;
+  padding: 30px 20px;
+  @media screen and (min-width: 768px) {
+    padding-top: 62px;
+    padding-right: 57px;
+    padding-left: 57px;
+    padding-bottom: 42px;
+    width: 540px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-right: 40px;
+    padding-left: 40px;
+    width: 505px;
+  }
+}
+
+.formTitle {
+  margin-bottom: 20px;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+}
+
+.input {
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 24px;
+  }
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
+}
+
+.btn {
+  width: 110px;
+  min-height: 60px;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    width: 200px;
+  }
+}
+
+.toggleVisibleBtn {
+  position: absolute;
+  top: 32px;
+  right: 16px;
+}
