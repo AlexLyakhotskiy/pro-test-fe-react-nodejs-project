@@ -1,13 +1,192 @@
+.ContaineNameAndFinishButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 24px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 42px;
+    margin-bottom: 28px;
+    width: 652px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 820px;
+  }
+}
+
+.titelTest {
+  width: 130px;
+  font-size: 14px;
+  line-height: 1.1;
+  @media screen and (min-width: 768px) {
+    width: 250px;
+    font-size: 22px;
+  }
+}
+
 .conteiner {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 40px 20px 65px 20px;
   width: 280px;
-  height: 456px;
+  min-height: 456px;
   background-color: #ffffff;
   box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
 
   @media screen and (min-width: 768px) {
+    padding: 50px 40px 58px 50px;
     width: 652px;
   }
+  @media screen and (min-width: 1280px) {
+    padding: 50px 85px 58px 85px;
+    width: 820px;
+  }
+}
+
+.numQuestion {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: var(--color-second-text);
+
+  & .numCount {
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--color-btn-background);
+  }
+
+  @media screen and (min-width: 768px) {
+    font-weight: 400;
+    font-size: 14px;
+    & .numCount {
+      font-size: 14px;
+    }
+  }
+}
+
+.nameQuestion {
+  position: relative;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 240px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.3;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 130px;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
+    border-bottom: 1px solid var(--color-btn-background);
+    @media screen and (min-width: 768px) {
+      bottom: -30px;
+      width: 321.5px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 60px;
+    width: 620px;
+    font-weight: 700;
+    font-size: 22px;
+  }
+}
+
+.oneAnswer {
+  margin-bottom: 12px;
+  font-size: 10px;
+  & .nameAnswer {
+    margin-right: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+}
+
+//кнопки
+.btnCounterConteiner {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
   @media screen and (min-width: 768px) {
     width: 652px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 820px;
+  }
+}
+
+.btnFinish {
+  margin: 0 0 0 auto;
+  width: 130px;
+  min-height: 48px;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    width: 190px;
+  }
+}
+
+.btnNext {
+  width: 55px;
+  height: 44px;
+  &:disabled {
+    &:hover,
+    &:focus {
+      background-color: var(--color-label-placeholder);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    width: 190px;
+  }
+}
+
+.btnText {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-left: 20px;
+    text-align: left;
+    width: 140px;
+    font-size: 12px;
+  }
+}
+.btnLeftText {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 140px;
+    margin-left: 11px;
+    text-align: left;
+    font-size: 12px;
+  }
+}
+
+.btnArrow {
+  width: 24px;
+  height: 16px;
+  fill: black;
+  @media screen and (min-width: 768px) {
+    margin-right: 15px;
+  }
+}
+
+.btnArrowLeft {
+  width: 24px;
+  height: 16px;
+  @media screen and (min-width: 768px) {
+    margin-left: 15px;
   }
 }
