@@ -7,6 +7,8 @@ import { testAction } from '../../redux/tests/tests-reducer';
 import { apiGetTests } from '../../utils/apiServices';
 import styles from './TestPage.module.scss';
 import { routes } from '../../routes/routes';
+import MainButton from '../../components/_shared/MainButton/MainButton';
+import Svg from '../../components/_shared/Svg/Svg';
 
 export default function TestPage() {
   const dispatch = useDispatch();
@@ -51,49 +53,69 @@ export default function TestPage() {
     <>
       <Container>
         <div>
-          <div>
-            <h2>{nameTest}</h2>
-            <button onClick={handleFinishTest}>Finish test</button>
+          <div className={styles.ContaineNameAndFinishButton}>
+            <h2 className={styles.titelTest}>{nameTest}</h2>
+            <MainButton
+              className={styles.btnFinish}
+              onClick={() => handleFinishTest()}
+              label={'Finish test'}
+            />
+            {/* <button onClick={handleFinishTest}>Finish test</button> */}
           </div>
 
           <div className={styles.conteiner}>
-            <p>Question {count} / 12</p>
+            <p className={styles.numQuestion}>
+              Question <span className={styles.numCount}>{count}</span> / 12
+            </p>
             <ul>
               <li>
-                <h2>{testsArray.length && testQustens.question}</h2>
+                <h2 className={styles.nameQuestion}>
+                  {testsArray.length && testQustens.question}
+                </h2>
                 <ul>
                   {testsArray.length &&
                     testQustens.answers.map((answer, i) => (
-                      <li key={i}>
-                        <div>
-                          <label>
-                            <input
-                              type="radio"
-                              value={answer}
-                              checked={
-                                testsArray[count - 1].rightAnswer === answer
-                              }
-                              onChange={handleChange}
-                            />
-                            {answer}
-                          </label>
-                        </div>
+                      <li key={i} className={styles.oneAnswer}>
+                        <label className={styles.oneAnswerlabel}>
+                          <input
+                            type="radio"
+                            value={answer}
+                            checked={
+                              testsArray[count - 1].rightAnswer === answer
+                            }
+                            onChange={handleChange}
+                            className={styles.nameAnswer}
+                          />
+                          {answer}
+                        </label>
                       </li>
                     ))}
                 </ul>
               </li>
             </ul>
           </div>
-          <div>
-            <button disabled={count === 1} onClick={() => setCount(count - 1)}>
-              Previous question
-            </button>
-            <button
+          <div className={styles.btnCounterConteiner}>
+            <MainButton
+              className={styles.btnNext}
+              disabled={count === 1}
+              onClick={() => setCount(count - 1)}
+            >
+              <>
+                <Svg icon={'arrow-left'} className={styles.btnArrowLeft} />
+                <p className={styles.btnLeftText}>Previous question</p>
+              </>
+            </MainButton>
+            <MainButton
+              className={styles.btnNext}
+              isMainButton={false}
               disabled={count === 12 || !testsArray[count - 1]?.rightAnswer}
               onClick={() => setCount(count + 1)}
             >
-              Next question
-            </button>
+              <>
+                <p className={styles.btnText}>Next question</p>
+                <Svg icon={'arrow'} className={styles.btnArrow} />
+              </>
+            </MainButton>
           </div>
         </div>
       </Container>
