@@ -8,7 +8,7 @@ import Svg from '../../components/_shared/Svg/Svg';
 export default function HomePage() {
   return (
     <Container>
-      <div>
+      <div className={styles.containerHomePage}>
         <h1 className={styles.title}>
           “Regression testing. What is it? If the system compiles, that's good,
           if it boots, that's great!”

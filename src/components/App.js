@@ -6,7 +6,7 @@ import { getToken } from '../redux/auth/auth-selectors';
 
 import Header from './Header/Header';
 import Main from './Main/Main';
-// import Footer from './Footer/Footer';
+import Footer from './Footer/Footer';
 
 function App() {
   const accessToken = useSelector(getToken);
@@ -19,7 +19,7 @@ function App() {
     <>
       <Header />
       <Main />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
