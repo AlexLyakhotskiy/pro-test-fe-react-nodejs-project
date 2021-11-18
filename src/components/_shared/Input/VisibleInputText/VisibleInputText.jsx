@@ -14,6 +14,7 @@ export default function VisibleInputText({
       type="button"
       onClick={toggleVisible}
       className={`${styles.btn} ${className}`}
+      aria-label="toggle input text visibility"
     >
       <Svg
         icon={isVisibleText ? 'eye-blocked' : 'eye'}

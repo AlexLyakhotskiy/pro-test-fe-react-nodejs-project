@@ -1,5 +1,10 @@
+@import '../../styles/variables.scss';
+
 .title {
   position: relative;
+  margin: 0 auto;
+  width: 650px;
+
   margin-top: 30px;
   margin-bottom: 33px;
   text-align: center;
@@ -16,7 +21,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.15;
-    border-bottom: 1px solid #00122f;
+    border-bottom: 1px solid var(--color-tema-background);
     @media screen and (min-width: 768px) {
       bottom: -30px;
       width: 321.5px;
@@ -65,7 +70,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #02172a;
+  background-color: var(--color-tema-background);
+  &:hover {
+    box-shadow: $shadow-hover var(--color-tema-background);
+    border: 1px solid var(--color-btn-border);
+  }
 
   @media screen and (min-width: 768px) {
     width: 400px;
@@ -80,7 +89,11 @@
   justify-content: center;
   width: 280px;
   height: 212px;
-  background-color: #ff6b01;
+  background-color: var(--color-btn-background);
+  &:hover {
+    box-shadow: $shadow-hover var(--color-btn-background-hover);
+    border: 1px solid var(--color-btn-border);
+  }
   @media screen and (min-width: 768px) {
     width: 400px;
     margin: 0 auto;
@@ -89,20 +102,45 @@
 
 .text {
   width: 177px;
+  height: 58px;
+  font-weight: 800;
   font-size: 24px;
-  line-height: 28px;
+  line-height: 1.1;
   text-align: center;
   color: white;
-
+  span {
+    display: block;
+  }
   @media screen and (min-width: 768px) {
-    font-weight: 800;
+    height: 78px;
+
     width: 240px;
     font-size: 32px;
     line-height: 39px;
   }
+  @media screen and (min-width: 1280px) {
+    width: 374px;
+  }
 }
 
 .link {
-  padding: 10px;
+  padding: 60px 51px 46px 51px;
   text-decoration: none;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    padding: 60px 12px 45px 12px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 60px 14px 45px 14px;
+  }
+}
+
+.btnArrow {
+  width: 24px;
+  height: 16px;
+  fill: white;
+  margin-top: 32px;
+  @media screen and (min-width: 768px) {
+    margin-top: 15px;
+  }
 }

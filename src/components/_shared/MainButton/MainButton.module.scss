@@ -36,6 +36,6 @@
   &:hover {
     box-shadow: $shadow-hover var(--color-btn-second-background-hover);
     border-color: var(--color-btn-border-hover);
-    background-color: var(--color-btn-second-background-hover);
+    // background-color: var(--color-btn-background);
   }
 }

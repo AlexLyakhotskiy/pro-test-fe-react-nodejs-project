@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './HomePage.module.scss';
 import { routes } from '../../routes/routes.js';
 import Container from '../../components/_shared/Container/Container';
+import Svg from '../../components/_shared/Svg/Svg';
 
 export default function HomePage() {
   return (
@@ -23,7 +24,10 @@ export default function HomePage() {
               to={{ pathname: routes.test, nameTest: 'QA technical training' }}
               className={styles.link}
             >
-              <p className={styles.text}>QA technical training</p>
+              <p className={styles.text}>
+                QA technical <span> training</span>
+              </p>
+              <Svg icon={'arrow'} className={styles.btnArrow} />
             </Link>
           </div>
           <div className={styles.blokTemaTest}>
@@ -34,7 +38,10 @@ export default function HomePage() {
               }}
               className={styles.link}
             >
-              <p className={styles.text}>Testing theory</p>
+              <p className={styles.text}>
+                Testing <span> theory</span>
+              </p>
+              <Svg icon={'arrow'} className={styles.btnArrow} />
             </Link>
           </div>
         </div>

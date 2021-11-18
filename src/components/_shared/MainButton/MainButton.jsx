@@ -4,13 +4,16 @@ import styles from './MainButton.module.scss';
 
 export default function MainButton({
   type = 'button',
+  disabled = false,
   label,
   className,
   isMainButton = true,
   onClick = () => {},
+  children,
 }) {
   return (
     <button
+      disabled={disabled}
       type={type}
       className={`${
         isMainButton ? styles.mainBtn : styles.secondBtn
@@ -18,6 +21,7 @@ export default function MainButton({
       onClick={onClick}
     >
       {label}
+      {children}
     </button>
   );
 }
