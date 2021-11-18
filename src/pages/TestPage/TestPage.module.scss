@@ -190,3 +190,26 @@
     margin-left: 15px;
   }
 }
+
+.oneAnswerlabel {
+  display: flex;
+  align-items: center;
+}
+
+input[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  background-clip: content-box;
+  border: 1px solid var(--color-label-placeholder);
+  background-color: var(--color-input-background);
+  border-radius: 50%;
+}
+
+input[type='radio']:checked {
+  background-color: var(--color-btn-background-hover);
+}

@@ -89,20 +89,45 @@
 
 .text {
   width: 177px;
+  height: 58px;
+  font-weight: 800;
   font-size: 24px;
-  line-height: 28px;
+  line-height: 1.1;
   text-align: center;
   color: white;
-
+  span {
+    display: block;
+  }
   @media screen and (min-width: 768px) {
-    font-weight: 800;
+    height: 78px;
+
     width: 240px;
     font-size: 32px;
     line-height: 39px;
   }
+  @media screen and (min-width: 1280px) {
+    width: 374px;
+  }
 }
 
 .link {
-  padding: 10px;
+  padding: 60px 51px 46px 51px;
   text-decoration: none;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    padding: 60px 12px 45px 12px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 60px 14px 45px 14px;
+  }
+}
+
+.btnArrow {
+  width: 24px;
+  height: 16px;
+  fill: white;
+  margin-top: 32px;
+  @media screen and (min-width: 768px) {
+    margin-top: 15px;
+  }
 }

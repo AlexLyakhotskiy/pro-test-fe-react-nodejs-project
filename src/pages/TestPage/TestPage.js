@@ -76,7 +76,7 @@ export default function TestPage() {
                   {testsArray.length &&
                     testQustens.answers.map((answer, i) => (
                       <li key={i} className={styles.oneAnswer}>
-                        <label>
+                        <label className={styles.oneAnswerlabel}>
                           <input
                             type="radio"
                             value={answer}
