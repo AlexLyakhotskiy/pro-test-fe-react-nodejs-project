@@ -1,11 +1,11 @@
 import React from 'react';
 
-import AuthForm from '../../components/AuthForm/AuthForm';
+import Auth from '../../components/Auth/Auth';
 
 export default function AuthPage() {
   return (
     <>
-      <AuthForm />
+      <Auth />
     </>
   );
 }
