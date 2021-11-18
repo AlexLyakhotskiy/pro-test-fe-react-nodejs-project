@@ -25,11 +25,14 @@ export default function TestPage() {
 
   const handleFinishTest = () => {
     const isFinishTest = testsArray.every(({ rightAnswer }) => rightAnswer);
-    if (isFinishTest) {
-      dispatch(testAction.addResult(testsArray));
-      history.replace(routes.results);
-      return;
-    }
+    // if (isFinishTest) {
+    dispatch(testAction.addResult(testsArray));
+    history.replace({
+      pathname: routes.results,
+      nameTest: nameTest,
+    });
+    return;
+    // }
     history.replace(routes.home);
   };
 

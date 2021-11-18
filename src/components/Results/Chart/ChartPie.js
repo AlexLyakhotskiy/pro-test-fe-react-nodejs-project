@@ -4,9 +4,8 @@ import 'chartjs-plugin-piechart-outlabels';
 
 import styles from './ChartPie.module.scss';
 
-const ChartPie = () => {
-  const totalQuestions = 12;
-  const corectAnswers = 9;
+const ChartPie = ({ correctAnswers, totalQuestions }) => {
+  const incorrectAnswers = totalQuestions - correctAnswers;
 
   const options = {
     legend: {
@@ -37,7 +36,7 @@ const ChartPie = () => {
     datasets: [
       {
         label: 'My First Dataset',
-        data: [9, 17],
+        data: [correctAnswers, incorrectAnswers],
         backgroundColor: ['#ff6b09', '#bbbbbb'],
         borderWidth: 0,
         hoverOffset: 2,
@@ -65,7 +64,9 @@ const ChartPie = () => {
   };
   return (
     <div className={styles.charContainer}>
-      <Pie data={data} options={options} />
+      <div className={styles.char}>
+        <Pie data={data} options={options} className={styles.chart} />
+      </div>
     </div>
   );
 };
