@@ -1,0 +1,106 @@
+//кнопки
+.btnCounterConteiner {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 652px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 820px;
+  }
+}
+
+.btnFinish {
+  margin: 0 0 0 auto;
+  width: 130px;
+  min-height: 48px;
+  text-transform: uppercase;
+  &:disabled {
+    background-color: var(--color-label-placeholder);
+    &:hover,
+    &:focus {
+      background-color: var(--color-label-placeholder);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    width: 190px;
+  }
+}
+
+.btnNext {
+  width: 55px;
+  height: 44px;
+  &:disabled {
+    background-color: var(--color-label-placeholder);
+    &:hover,
+    &:focus {
+      background-color: var(--color-label-placeholder);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    width: 190px;
+  }
+}
+
+.btnText {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-left: 20px;
+    text-align: left;
+    width: 140px;
+    font-size: 12px;
+  }
+}
+.btnLeftText {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 140px;
+    margin-left: 11px;
+    text-align: left;
+    font-size: 12px;
+  }
+}
+
+.btnArrow {
+  width: 24px;
+  height: 16px;
+  fill: black;
+  @media screen and (min-width: 768px) {
+    margin-right: 15px;
+  }
+}
+
+.btnArrowLeft {
+  width: 24px;
+  height: 16px;
+  @media screen and (min-width: 768px) {
+    margin-left: 15px;
+  }
+}
+
+.oneAnswerlabel {
+  display: flex;
+  align-items: center;
+}
+
+input[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  padding: 2px;
+  background-clip: content-box;
+  border: 1px solid var(--color-label-placeholder);
+  background-color: var(--color-input-background);
+  border-radius: 50%;
+}
+
+input[type='radio']:checked {
+  background-color: var(--color-btn-background-hover);
+}
