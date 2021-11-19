@@ -58,3 +58,12 @@ export async function apiGetTests(name) {
     throw new Error(error);
   }
 }
+
+export async function apiGetResult(name, userAnswers) {
+  try {
+    const { data } = await axios.post(`/tests/${name}/results`, userAnswers);
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+}

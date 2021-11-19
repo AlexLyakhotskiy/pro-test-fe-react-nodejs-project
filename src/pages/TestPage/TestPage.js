@@ -29,7 +29,10 @@ export default function TestPage() {
     const isFinishTest = testsArray.every(({ rightAnswer }) => rightAnswer);
     if (isFinishTest) {
       dispatch(testAction.addResult(testsArray));
-      history.replace(routes.results);
+      history.replace({
+        pathname: routes.results,
+        nameTest: nameTest,
+      });
       return;
     }
     history.replace(routes.home);
