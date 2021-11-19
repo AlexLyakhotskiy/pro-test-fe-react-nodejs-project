@@ -63,7 +63,6 @@ export default function TestPage() {
               className={styles.btnFinish}
               onClick={() => handleFinishTest()}
               label={'Finish test'}
-              disabled={count !== 12}
             />
           </div>
           <TestQuestion
