@@ -8,7 +8,8 @@ import { apiGetTests } from '../../utils/apiServices';
 import styles from './TestPage.module.scss';
 import { routes } from '../../routes/routes';
 import MainButton from '../../components/_shared/MainButton/MainButton';
-import Svg from '../../components/_shared/Svg/Svg';
+import TestButtons from '../../components/Test/TestButtons/TestButtons';
+import TestQuestion from '../../components/Test/TestQuesstion/TestQuestion';
 
 export default function TestPage() {
   const dispatch = useDispatch();
@@ -62,61 +63,19 @@ export default function TestPage() {
               disabled={count !== 12}
             />
           </div>
-
-          <div className={styles.conteiner}>
-            <p className={styles.numQuestion}>
-              Question <span className={styles.numCount}>{count}</span> / 12
-            </p>
-            <ul>
-              <li>
-                <h2 className={styles.nameQuestion}>
-                  {testsArray.length && testQustens.question}
-                </h2>
-                <ul>
-                  {testsArray.length &&
-                    testQustens.answers.map((answer, i) => (
-                      <li key={i} className={styles.oneAnswer}>
-                        <label className={styles.oneAnswerlabel}>
-                          <input
-                            type="radio"
-                            value={answer}
-                            checked={
-                              testsArray[count - 1].rightAnswer === answer
-                            }
-                            onChange={handleChange}
-                            className={styles.nameAnswer}
-                          />
-                          {answer}
-                        </label>
-                      </li>
-                    ))}
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.btnCounterConteiner}>
-            <MainButton
-              className={styles.btnNext}
-              disabled={count === 1}
-              onClick={() => setCount(count - 1)}
-            >
-              <>
-                <Svg icon={'arrow-left'} className={styles.btnArrowLeft} />
-                <p className={styles.btnLeftText}>Previous question</p>
-              </>
-            </MainButton>
-            <MainButton
-              className={styles.btnNext}
-              isMainButton={false}
-              disabled={count === 12 || !testsArray[count - 1]?.rightAnswer}
-              onClick={() => setCount(count + 1)}
-            >
-              <>
-                <p className={styles.btnText}>Next question</p>
-                <Svg icon={'arrow'} className={styles.btnArrow} />
-              </>
-            </MainButton>
-          </div>
+          <TestQuestion
+            count={count}
+            testsArray={testsArray}
+            testQustens={testQustens}
+            handleChange={handleChange}
+          />
+          <TestButtons
+            count={count}
+            setCount={() => setCount(count - 1)}
+            nextCount={() => setCount(count + 1)}
+            testsArray={testsArray}
+            testQustens={testQustens}
+          />
         </div>
       </Container>
     </>
