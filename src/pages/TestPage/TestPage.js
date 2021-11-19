@@ -52,15 +52,15 @@ export default function TestPage() {
   return (
     <>
       <Container>
-        <div>
+        <div className={styles.ContaineTestPage}>
           <div className={styles.ContaineNameAndFinishButton}>
             <h2 className={styles.titelTest}>{nameTest}</h2>
             <MainButton
               className={styles.btnFinish}
               onClick={() => handleFinishTest()}
               label={'Finish test'}
+              disabled={count !== 12}
             />
-            {/* <button onClick={handleFinishTest}>Finish test</button> */}
           </div>
 
           <div className={styles.conteiner}>

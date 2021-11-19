@@ -1,0 +1,51 @@
+.foterConteiner {
+  width: 100%;
+  height: 56px;
+  padding: 10px 19px;
+  background-color: #02172a;
+  text-align: center;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  @media screen and (min-width: 768px) {
+    padding: 19px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+}
+
+.oneStringConteiner {
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+.stringlink {
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.foterText {
+  display: inline;
+}
+.spanText {
+  margin-right: 5px;
+}
+
+.iconHeart {
+  display: inline;
+  fill: red;
+  margin-left: 5px;
+  width: 16px;
+  height: 14px;
+}
+
+.linkTeam {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: underline;
+}
