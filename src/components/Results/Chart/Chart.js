@@ -55,31 +55,31 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
-    const sx = cx + outerRadius * cos;
-    const sy = cy + outerRadius * sin;
+    const sx = cx + (outerRadius - 20) * cos;
+    const sy = cy + (outerRadius - 20) * sin;
     const mx = cx + (outerRadius + 20) * cos;
     const my = cy + (outerRadius + 20) * sin;
-    const ex = mx + (cos >= 0 ? 1 : -1) * 10;
+    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
     const ey = my;
     const textAnchor = cos >= 0 ? 'start' : 'end';
 
-    console.log(`payload`, payload);
     return (
       <g>
         <path
           d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-          stroke={fill}
+          stroke="#555555"
           fill="none"
         />
-        <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+        <circle cx={sx} cy={sy} r={3} stroke={fill} fill="#ffffff" />
+
         <text
-          x={ex + (cos >= 0 ? 1 : -1) * 12}
+          x={ex + (cos >= 0 ? 1 : -1) * 5}
           y={ey}
           textAnchor={textAnchor}
           fill="#000000"
         >{`${(percent * 100).toFixed(0)}%`}</text>
         <text
-          x={ex + (cos >= 0 ? 1 : -1) * 12}
+          x={ex + (cos >= 0 ? 1 : -1) * 5}
           y={ey}
           dy={12}
           textAnchor={textAnchor}
