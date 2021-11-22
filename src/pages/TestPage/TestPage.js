@@ -59,7 +59,7 @@ export default function TestPage() {
         {!!testsArray.length && (
           <div className={styles.ContaineTestPage}>
             <div className={styles.ContaineNameAndFinishButton}>
-              <h2 className={styles.titelTest}>{nameTest}</h2>
+              <h2 className={styles.titelTest}>[ {nameTest}_ ]</h2>
               <MainButton
                 className={styles.btnFinish}
                 onClick={() => handleFinishTest()}
