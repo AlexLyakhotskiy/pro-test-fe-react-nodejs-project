@@ -1,12 +1,5 @@
-import React, { PureComponent, useCallback, useEffect, useState } from 'react';
-import {
-  PieChart,
-  Pie,
-  Sector,
-  Cell,
-  ResponsiveContainer,
-  LabelList,
-} from 'recharts';
+import React, { useCallback, useEffect, useState } from 'react';
+import { PieChart, Pie, Cell } from 'recharts';
 
 import styles from './Chart.module.scss';
 
@@ -43,8 +36,6 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
     midAngle,
     innerRadius,
     outerRadius,
-    startAngle,
-    endAngle,
     fill,
     payload,
     percent,
@@ -93,12 +84,12 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
     <div className={styles.chart}>
       <PieChart
         width={width >= breakPoint ? 600 : 300}
-        height={width >= breakPoint ? 310 : 185}
+        height={width >= breakPoint ? 350 : 220}
       >
         <Pie
           data={data}
           cx={width >= breakPoint ? 300 : 150}
-          cy={width >= breakPoint ? 146 : 85}
+          cy={width >= breakPoint ? 170 : 102}
           labelLine={false}
           label={renderCustomizedLabel}
           outerRadius={width >= breakPoint ? 140 : 80}
