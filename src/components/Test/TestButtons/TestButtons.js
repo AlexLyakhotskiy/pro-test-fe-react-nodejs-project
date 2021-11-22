@@ -21,17 +21,19 @@ export default function TestButtons({
           <p className={styles.btnLeftText}>Previous question</p>
         </>
       </MainButton>
-      <MainButton
-        className={styles.btnNext}
-        isMainButton={false}
-        disabled={count === 12 || !testsArray[count - 1]?.rightAnswer}
-        onClick={nextCount}
-      >
-        <>
-          <p className={styles.btnText}>Next question</p>
-          <Svg icon={'arrow'} className={styles.btnArrow} />
-        </>
-      </MainButton>
+      {count !== 12 && (
+        <MainButton
+          className={styles.btnNext}
+          isMainButton={false}
+          disabled={!testsArray[count - 1]?.rightAnswer}
+          onClick={nextCount}
+        >
+          <>
+            <p className={styles.btnText}>Next question</p>
+            <Svg icon={'arrow'} className={styles.btnArrow} />
+          </>
+        </MainButton>
+      )}
     </div>
   );
 }
