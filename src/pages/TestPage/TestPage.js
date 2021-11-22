@@ -23,7 +23,7 @@ export default function TestPage() {
       history.replace(routes.home);
       return;
     }
-    apiGetTests(nameTest).then(setTestsArray);
+    apiGetTests(nameTest).then(setTestsArray).catch(console.log);
   }, [nameTest, history]);
 
   const handleFinishTest = () => {
