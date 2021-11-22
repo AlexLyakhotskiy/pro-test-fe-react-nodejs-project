@@ -25,7 +25,6 @@ export const signIn = createAsyncThunk(
     try {
       return await apiLoginUser(user);
     } catch (error) {
-      console.dir(error);
       return rejectWithValue(error.message);
     }
   },

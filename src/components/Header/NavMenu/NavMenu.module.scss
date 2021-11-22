@@ -45,6 +45,8 @@
 
     @media screen and (min-width: 1280px) {
       margin-left: 80px;
+      font-size: 14px;
+      line-height: 1.14;
     }
 
     &:hover,
@@ -91,11 +93,11 @@
 
 .userNameIcon {
   font-size: 14px;
-  font-weight: 500;
-  padding: 5px;
+  padding: 10px;
   background-color: var(--color-second-background);
-  width: 20px;
-  height: 20px;
+  color: var(--color-second-text);
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   text-transform: uppercase;

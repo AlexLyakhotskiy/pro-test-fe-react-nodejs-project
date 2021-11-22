@@ -57,7 +57,7 @@ const NavMenu = props => {
           Contacts
         </NavLink>
       </nav>
-      {isLoggedIn && width > breakPoint && (
+      {isLoggedIn && width >= breakPoint && (
         <div className={styles.userNameBox}>
           <span className={styles.userNameIcon}>{userName[0]}</span>
           <span className={styles.userName}>{userName}</span>
