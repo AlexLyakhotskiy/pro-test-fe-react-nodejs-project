@@ -13,7 +13,7 @@ import styles from './Chart.module.scss';
 const Chart = ({ correctAnswers, totalQuestions }) => {
   const [windowWidth, setWindowWidth] = useState({
     width: window.innerWidth,
-    breakPoint: 767,
+    breakPoint: 768,
   });
   const incorrectAnswers = totalQuestions - correctAnswers;
   const handleResizeWindow = useCallback(() => {
@@ -55,31 +55,31 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
-    const sx = cx + outerRadius * cos;
-    const sy = cy + outerRadius * sin;
+    const sx = cx + (outerRadius - 20) * cos;
+    const sy = cy + (outerRadius - 20) * sin;
     const mx = cx + (outerRadius + 20) * cos;
     const my = cy + (outerRadius + 20) * sin;
-    const ex = mx + (cos >= 0 ? 1 : -1) * 10;
+    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
     const ey = my;
     const textAnchor = cos >= 0 ? 'start' : 'end';
 
-    console.log(`payload`, payload);
     return (
       <g>
         <path
           d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-          stroke={fill}
+          stroke="#555555"
           fill="none"
         />
-        <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+        <circle cx={sx} cy={sy} r={3} stroke={fill} fill="#ffffff" />
+
         <text
-          x={ex + (cos >= 0 ? 1 : -1) * 12}
+          x={ex + (cos >= 0 ? 1 : -1) * 5}
           y={ey}
           textAnchor={textAnchor}
           fill="#000000"
         >{`${(percent * 100).toFixed(0)}%`}</text>
         <text
-          x={ex + (cos >= 0 ? 1 : -1) * 12}
+          x={ex + (cos >= 0 ? 1 : -1) * 5}
           y={ey}
           dy={12}
           textAnchor={textAnchor}
@@ -92,16 +92,16 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
   return (
     <div className={styles.chart}>
       <PieChart
-        width={width < breakPoint ? 300 : 600}
-        height={width < breakPoint ? 185 : 285}
+        width={width >= breakPoint ? 600 : 300}
+        height={width >= breakPoint ? 310 : 185}
       >
         <Pie
           data={data}
-          cx={width < breakPoint ? 150 : 300}
-          cy={width < breakPoint ? 85 : 135}
+          cx={width >= breakPoint ? 300 : 150}
+          cy={width >= breakPoint ? 146 : 85}
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={width < breakPoint ? 80 : 140}
+          outerRadius={width >= breakPoint ? 140 : 80}
           fill="#8884d8"
           dataKey="value"
         >

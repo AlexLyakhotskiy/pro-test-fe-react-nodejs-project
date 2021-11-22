@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import styles from './Results.module.scss';
 import { useHistory, useLocation } from 'react-router';
 
 import imgCat from '../../icons/cat.png';
@@ -10,6 +9,8 @@ import { routes } from '../../routes/routes';
 
 import { getTestSelector } from '../../redux/tests/tests-selector';
 import { apiGetResult } from '../../utils/apiServices';
+
+import styles from './Results.module.scss';
 
 const Results = () => {
   const [correctAnswers, setCorrectAnswers] = useState(null);
@@ -42,7 +43,7 @@ const Results = () => {
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Results</h2>
       <p className={styles.testName}>
-        {userAnswers && userAnswers[0].nameTest}
+        [{userAnswers && userAnswers[0].nameTest}_]
       </p>
       <span className={styles.borderLine}></span>
       <Chart

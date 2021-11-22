@@ -26,7 +26,7 @@ const teamArr = [
     nameEn: 'Alina Oksentiuk',
     position: 'Full-Stack developer',
     preview: Alina,
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/alina-oksentiuk-635ab8153/',
     github: 'https://github.com/mandarinka99',
   },
 ];

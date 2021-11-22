@@ -5,15 +5,16 @@
   display: flex;
   background-image: url(../../icons/imgBg.jpg);
   background-repeat: no-repeat;
-  background-position: left -311px top 0;
-  background-size: 866px 578px;
+  background-position: left -412px top 0;
+  background-size: 1066px 778px;
 
   @media screen and (min-width: 768px) {
     background-size: 2022px 1350px;
     background-position: left -687px top -157px;
   }
   @media screen and (min-width: 1280px) {
-    background-position: right -220px top 0;
+    background-size: 2722px 1650px;
+    background-position: right -160px top 0;
   }
 }
 
@@ -61,11 +62,11 @@
 }
 
 .listBox:last-child {
-  margin-bottom: 111px;
+  margin-bottom: 350px;
   @media screen and (min-width: 768px) {
     margin-bottom: 416px;
   }
   @media screen and (min-width: 1280px) {
-    margin-bottom: 200px;
+    margin-bottom: 693px;
   }
 }
