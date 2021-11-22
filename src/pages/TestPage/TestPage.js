@@ -56,29 +56,33 @@ export default function TestPage() {
   return (
     <>
       <Container>
-        <div className={styles.ContaineTestPage}>
-          <div className={styles.ContaineNameAndFinishButton}>
-            <h2 className={styles.titelTest}>{nameTest}</h2>
-            <MainButton
-              className={styles.btnFinish}
-              onClick={() => handleFinishTest()}
-              label={'Finish test'}
+        {!!testsArray.length && (
+          <div className={styles.ContaineTestPage}>
+            <div className={styles.ContaineNameAndFinishButton}>
+              <h2 className={styles.titelTest}>{nameTest}</h2>
+              <MainButton
+                className={styles.btnFinish}
+                onClick={() => handleFinishTest()}
+                label={'Finish test'}
+              />
+            </div>
+
+            <TestQuestion
+              count={count}
+              testsArray={testsArray}
+              testQustens={testQustens}
+              handleChange={handleChange}
+            />
+
+            <TestButtons
+              count={count}
+              setCount={() => setCount(count - 1)}
+              nextCount={() => setCount(count + 1)}
+              testsArray={testsArray}
+              testQustens={testQustens}
             />
           </div>
-          <TestQuestion
-            count={count}
-            testsArray={testsArray}
-            testQustens={testQustens}
-            handleChange={handleChange}
-          />
-          <TestButtons
-            count={count}
-            setCount={() => setCount(count - 1)}
-            nextCount={() => setCount(count + 1)}
-            testsArray={testsArray}
-            testQustens={testQustens}
-          />
-        </div>
+        )}
       </Container>
     </>
   );
