@@ -97,11 +97,11 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
       >
         <Pie
           data={data}
-          cx={width < breakPoint ? 150 : 300}
-          cy={width < breakPoint ? 85 : 135}
+          cx={width >= breakPoint ? 300 : 150}
+          cy={width >= breakPoint ? 135 : 85}
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={width < breakPoint ? 80 : 140}
+          outerRadius={width >= breakPoint ? 140 : 80}
           fill="#8884d8"
           dataKey="value"
         >
