@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://agile-stream-56061.herokuapp.com/';
+axios.defaults.baseURL = 'http://localhost:8080/';
 
 export const apiToken = {
   set(token) {
