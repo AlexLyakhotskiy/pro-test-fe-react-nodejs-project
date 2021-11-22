@@ -5,12 +5,11 @@ import { useHistory, useLocation } from 'react-router';
 
 import imgCat from '../../icons/cat.png';
 import MainButton from '../_shared/MainButton/MainButton';
-import ChartPie from './Chart/ChartPie';
+import Chart from './Chart/Chart';
 import { routes } from '../../routes/routes';
 
 import { getTestSelector } from '../../redux/tests/tests-selector';
 import { apiGetResult } from '../../utils/apiServices';
-import Chart from './Chartt/Chart';
 
 const Results = () => {
   const [correctAnswers, setCorrectAnswers] = useState(null);

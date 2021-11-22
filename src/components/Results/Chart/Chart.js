@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, useCallback, useEffect, useState } from 'react';
 import {
   PieChart,
   Pie,
@@ -11,7 +11,23 @@ import {
 import styles from './Chart.module.scss';
 
 const Chart = ({ correctAnswers, totalQuestions }) => {
+  const [windowWidth, setWindowWidth] = useState({
+    width: window.innerWidth,
+    breakPoint: 767,
+  });
   const incorrectAnswers = totalQuestions - correctAnswers;
+  const handleResizeWindow = useCallback(() => {
+    setWindowWidth({ ...windowWidth, width: window.innerWidth });
+  }, [windowWidth]);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResizeWindow);
+    return () => {
+      window.removeEventListener('resize', handleResizeWindow);
+    };
+  }, [handleResizeWindow]);
+
+  const { width, breakPoint } = windowWidth;
 
   const data = [
     { name: 'Correct', value: correctAnswers },
@@ -60,30 +76,32 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
           x={ex + (cos >= 0 ? 1 : -1) * 12}
           y={ey}
           textAnchor={textAnchor}
-          fill="#333"
-        >{`${payload.name}`}</text>
-
+          fill="#000000"
+        >{`${(percent * 100).toFixed(0)}%`}</text>
         <text
           x={ex + (cos >= 0 ? 1 : -1) * 12}
           y={ey}
-          dy={10}
+          dy={12}
           textAnchor={textAnchor}
-          fill="#999"
-        >{`${(percent * 100).toFixed(0)}%`}</text>
+          fill="#000000"
+        >{`${payload.name}`}</text>
       </g>
     );
   };
 
   return (
     <div className={styles.chart}>
-      <PieChart width={300} height={170}>
+      <PieChart
+        width={width < breakPoint ? 300 : 600}
+        height={width < breakPoint ? 185 : 285}
+      >
         <Pie
           data={data}
-          cx={150}
-          cy={85}
+          cx={width < breakPoint ? 150 : 300}
+          cy={width < breakPoint ? 85 : 135}
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={80}
+          outerRadius={width < breakPoint ? 80 : 140}
           fill="#8884d8"
           dataKey="value"
         >
@@ -97,14 +115,3 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
 };
 
 export default Chart;
-
-//
-//  <text
-//    x={x}
-//    y={y}
-//    fill="white"
-//    textAnchor={x > cx ? 'start' : 'end'}
-//    dominantBaseline="central"
-//  >
-//    {`${payload.name} ${(percent * 100).toFixed(0)}%`}
-//  </text>;
