@@ -20,6 +20,10 @@ const NavMenu = props => {
     dispatch(logout());
   };
 
+  const handleCloseMenu = () => {
+    isBurgerMenuOpen && toggleModal();
+  };
+
   return (
     <div className={styles.headerWrapper}>
       <nav className={styles.headerNav}>
@@ -30,6 +34,7 @@ const NavMenu = props => {
               to={routes.home}
               className={styles.headerNavLink}
               activeClassName={styles.activeLink}
+              onClick={handleCloseMenu}
             >
               Home
             </NavLink>
@@ -37,6 +42,7 @@ const NavMenu = props => {
               to={routes.materials}
               className={styles.headerNavLink}
               activeClassName={styles.activeLink}
+              onClick={handleCloseMenu}
             >
               Materials
             </NavLink>
@@ -46,6 +52,7 @@ const NavMenu = props => {
           to={routes.ourTeam}
           className={styles.headerNavLink}
           activeClassName={styles.activeLink}
+          onClick={handleCloseMenu}
         >
           Contacts
         </NavLink>
