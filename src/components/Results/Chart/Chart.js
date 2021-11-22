@@ -13,7 +13,7 @@ import styles from './Chart.module.scss';
 const Chart = ({ correctAnswers, totalQuestions }) => {
   const [windowWidth, setWindowWidth] = useState({
     width: window.innerWidth,
-    breakPoint: 767,
+    breakPoint: 768,
   });
   const incorrectAnswers = totalQuestions - correctAnswers;
   const handleResizeWindow = useCallback(() => {
@@ -92,8 +92,8 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
   return (
     <div className={styles.chart}>
       <PieChart
-        width={width < breakPoint ? 300 : 600}
-        height={width < breakPoint ? 185 : 285}
+        width={width >= breakPoint ? 600 : 300}
+        height={width >= breakPoint ? 285 : 185}
       >
         <Pie
           data={data}

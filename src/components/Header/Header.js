@@ -13,7 +13,7 @@ import styles from './Header.module.scss';
 const Header = () => {
   const [windowWidth, setWindowWidth] = useState({
     width: window.innerWidth,
-    breakPoint: 767,
+    breakPoint: 768,
   });
   const userName = useSelector(getUserName);
 
@@ -35,8 +35,11 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Container className={styles.container}>
-        <Logo />
-        {width > breakPoint && (
+        <div className={styles.logoWrapper}>
+          <Logo />
+        </div>
+
+        {width >= breakPoint && (
           <NavMenu width={width} breakPoint={breakPoint} />
         )}
         {isLoggedIn && width < breakPoint && (
