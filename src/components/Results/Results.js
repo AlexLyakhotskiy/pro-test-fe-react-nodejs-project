@@ -5,7 +5,7 @@ import { useHistory, useLocation } from 'react-router';
 
 import imgCat from '../../icons/cat.png';
 import MainButton from '../_shared/MainButton/MainButton';
-import ChartPie from './Chart/ChartPie';
+import Chart from './Chart/Chart';
 import { routes } from '../../routes/routes';
 
 import { getTestSelector } from '../../redux/tests/tests-selector';
@@ -16,7 +16,6 @@ const Results = () => {
   const userAnswers = useSelector(getTestSelector);
   const history = useHistory();
   const { nameTest } = useLocation();
-  console.log(`object`, nameTest);
 
   useEffect(() => {
     if (!nameTest) {
@@ -46,7 +45,7 @@ const Results = () => {
         {userAnswers && userAnswers[0].nameTest}
       </p>
       <span className={styles.borderLine}></span>
-      <ChartPie
+      <Chart
         correctAnswers={correctAnswers}
         totalQuestions={userAnswers.length}
       />
@@ -61,10 +60,24 @@ const Results = () => {
         </li>
       </ul>
       <img className={styles.img} src={imgCat} alt="cat" />
-      <p className={styles.resTitle}>Not bad!</p>
-      <p className={styles.resText}>
-        But you still need to learn some materials.
-      </p>
+      {correctAnswers === userAnswers.length && (
+        <p className={styles.resTitle}>Awesome!</p>
+      )}
+      {correctAnswers >= userAnswers.length / 2 && (
+        <>
+          <p className={styles.resTitle}>Not bad!</p>
+          <p className={styles.resText}>
+            But you still need to learn some materials.
+          </p>
+        </>
+      )}
+      {correctAnswers <= userAnswers.length / 2 && (
+        <>
+          <p className={styles.resTitle}>Not good!</p>
+          <p className={styles.resText}>You should learn more!</p>
+        </>
+      )}
+
       <MainButton
         onClick={onClick}
         className={styles.btn}
