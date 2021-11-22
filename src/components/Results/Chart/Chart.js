@@ -93,12 +93,12 @@ const Chart = ({ correctAnswers, totalQuestions }) => {
     <div className={styles.chart}>
       <PieChart
         width={width >= breakPoint ? 600 : 300}
-        height={width >= breakPoint ? 285 : 185}
+        height={width >= breakPoint ? 310 : 185}
       >
         <Pie
           data={data}
           cx={width >= breakPoint ? 300 : 150}
-          cy={width >= breakPoint ? 135 : 85}
+          cy={width >= breakPoint ? 146 : 85}
           labelLine={false}
           label={renderCustomizedLabel}
           outerRadius={width >= breakPoint ? 140 : 80}
