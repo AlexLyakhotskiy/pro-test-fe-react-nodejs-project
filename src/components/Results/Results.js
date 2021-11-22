@@ -43,7 +43,7 @@ const Results = () => {
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Results</h2>
       <p className={styles.testName}>
-        {userAnswers && userAnswers[0].nameTest}
+        [{userAnswers && userAnswers[0].nameTest}_]
       </p>
       <span className={styles.borderLine}></span>
       <Chart
